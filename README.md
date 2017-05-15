@@ -10,8 +10,8 @@ XCode 8.3.2
 ## Framework
 openFrameworks 0.9.8
 ## addons
-ofxFft
-ofxBTrack
-ofxGui
-ofxOSC
-ofxPostProcessing 
+ofxFft  
+ofxBTrack  
+ofxGui  
+ofxOSC  
+ofxPostProcessing  
