@@ -14,4 +14,4 @@ ofxFft
 ofxBTrack
 ofxGui
 ofxOSC
-ofxPostProcessing
+ofxPostProcessing 
