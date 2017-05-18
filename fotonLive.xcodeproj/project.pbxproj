@@ -59,6 +59,7 @@
 		B58A80B21A55E254F48E6E13 /* DofAltPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91F91C3BEAD0B3C2B92BB9A5 /* DofAltPass.cpp */; };
 		B59194C82B8D802DA33EC465 /* HsbShiftPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A1741CC4F784D8B130531 /* HsbShiftPass.cpp */; };
 		B951AAE35209993B4E399E77 /* PixelatePass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7462D018F6D6E407E598A021 /* PixelatePass.cpp */; };
+		BD4563BA1ECDD6BB003797F0 /* moriokaView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD4563B81ECDD6BB003797F0 /* moriokaView.cpp */; };
 		BE5ED1FDB18D5092CF3AACA0 /* PostProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 484F662699DFE8176E1B750F /* PostProcessing.cpp */; };
 		C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC8881B3C8C0A1C45F042E7A /* OscPrintReceivedElements.cpp */; };
 		CC4101C0E5B5912EE24140E1 /* src_sinc.c in Sources */ = {isa = PBXBuildFile; fileRef = 511E78AF8097CC7AF824127A /* src_sinc.c */; };
@@ -133,7 +134,7 @@
 		2FD4B0329909D3527F003494 /* UdpSocket.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = UdpSocket.h; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/UdpSocket.h; sourceTree = SOURCE_ROOT; };
 		32CA89CD22339F4F9433CAF6 /* ofxFft.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFft.cpp; path = ../../../addons/ofxFft/src/ofxFft.cpp; sourceTree = SOURCE_ROOT; };
 		3AACD9661AF21261E24A05A4 /* ConvolutionPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ConvolutionPass.cpp; path = ../../../addons/ofxPostProcessing/src/ConvolutionPass.cpp; sourceTree = SOURCE_ROOT; };
-		3AFD8D38F741064311C18A90 /* fotonLiveBase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = fotonLiveBase.h; path = src/fotonLiveBase.h; sourceTree = SOURCE_ROOT; };
+		3AFD8D38F741064311C18A90 /* fotonLiveBase.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = fotonLiveBase.h; path = src/fotonLiveBase.h; sourceTree = SOURCE_ROOT; };
 		3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = NetworkingUtils.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp; sourceTree = SOURCE_ROOT; };
 		3C39EA8CB1911093FD56F9ED /* HorizontalTiltShifPass.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = HorizontalTiltShifPass.h; path = ../../../addons/ofxPostProcessing/src/HorizontalTiltShifPass.h; sourceTree = SOURCE_ROOT; };
 		3F8A1741CC4F784D8B130531 /* HsbShiftPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = HsbShiftPass.cpp; path = ../../../addons/ofxPostProcessing/src/HsbShiftPass.cpp; sourceTree = SOURCE_ROOT; };
@@ -200,6 +201,9 @@
 		BAA4E229C246D7B615917505 /* ZoomBlurPass.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ZoomBlurPass.h; path = ../../../addons/ofxPostProcessing/src/ZoomBlurPass.h; sourceTree = SOURCE_ROOT; };
 		BC5A295038A42E91F31DE64F /* common.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = common.h; path = ../../../addons/ofxBTrack/libs/libsamplerate/common.h; sourceTree = SOURCE_ROOT; };
 		BC8881B3C8C0A1C45F042E7A /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscPrintReceivedElements.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPrintReceivedElements.cpp; sourceTree = SOURCE_ROOT; };
+		BD4563B51ECDD36E003797F0 /* fotonConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fotonConst.h; sourceTree = "<group>"; };
+		BD4563B81ECDD6BB003797F0 /* moriokaView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = moriokaView.cpp; sourceTree = "<group>"; };
+		BD4563B91ECDD6BB003797F0 /* moriokaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = moriokaView.h; sourceTree = "<group>"; };
 		C07AAE715D8853EDA76BC909 /* GodRaysPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GodRaysPass.cpp; path = ../../../addons/ofxPostProcessing/src/GodRaysPass.cpp; sourceTree = SOURCE_ROOT; };
 		C127DCF305861E6D5D6332E6 /* SSAOPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = SSAOPass.cpp; path = ../../../addons/ofxPostProcessing/src/SSAOPass.cpp; sourceTree = SOURCE_ROOT; };
 		C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscReceiver.cpp; path = ../../../addons/ofxOsc/src/ofxOscReceiver.cpp; sourceTree = SOURCE_ROOT; };
@@ -216,7 +220,7 @@
 		D30B5AC1775B774A5E976A0E /* samplerate.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = samplerate.c; path = ../../../addons/ofxBTrack/libs/libsamplerate/samplerate.c; sourceTree = SOURCE_ROOT; };
 		D32BBA6DEBCF11DEA0CAE0E0 /* mid_qual_coeffs.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mid_qual_coeffs.h; path = ../../../addons/ofxBTrack/libs/libsamplerate/mid_qual_coeffs.h; sourceTree = SOURCE_ROOT; };
 		D41ED8C8083845703AA1FDFA /* BloomPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = BloomPass.cpp; path = ../../../addons/ofxPostProcessing/src/BloomPass.cpp; sourceTree = SOURCE_ROOT; };
-		D6F8BA370A65D6F8C3DA7AC5 /* fotonLiveBase.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = fotonLiveBase.cpp; path = src/fotonLiveBase.cpp; sourceTree = SOURCE_ROOT; };
+		D6F8BA370A65D6F8C3DA7AC5 /* fotonLiveBase.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = fotonLiveBase.cpp; path = src/fotonLiveBase.cpp; sourceTree = SOURCE_ROOT; };
 		D8952DEFF3CE56AC1009A996 /* ofxFftw.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxFftw.h; path = ../../../addons/ofxFft/src/ofxFftw.h; sourceTree = SOURCE_ROOT; };
 		D9BFFBBF4CC43DEE890B3C3E /* OscTypes.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = OscTypes.cpp; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscTypes.cpp; sourceTree = SOURCE_ROOT; };
 		DACACDF2F37260A0BFF826E2 /* PostProcessing.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = PostProcessing.h; path = ../../../addons/ofxPostProcessing/src/PostProcessing.h; sourceTree = SOURCE_ROOT; };
@@ -527,6 +531,27 @@
 			name = src;
 			sourceTree = "<group>";
 		};
+		BD4563B61ECDD68C003797F0 /* fotonBase */ = {
+			isa = PBXGroup;
+			children = (
+				BD4563B51ECDD36E003797F0 /* fotonConst.h */,
+				1D9B95323B2AE31B332C3698 /* fotonLiveAudio.cpp */,
+				B2CAE52DFBBCDF8D98DB8BD0 /* fotonLiveAudio.h */,
+				D6F8BA370A65D6F8C3DA7AC5 /* fotonLiveBase.cpp */,
+				3AFD8D38F741064311C18A90 /* fotonLiveBase.h */,
+			);
+			name = fotonBase;
+			sourceTree = "<group>";
+		};
+		BD4563B71ECDD6A4003797F0 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BD4563B81ECDD6BB003797F0 /* moriokaView.cpp */,
+				BD4563B91ECDD6BB003797F0 /* moriokaView.h */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
 		BD52EC6DCE402D90869A80A1 /* ofxPostProcessing */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,10 +615,8 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
-				1D9B95323B2AE31B332C3698 /* fotonLiveAudio.cpp */,
-				B2CAE52DFBBCDF8D98DB8BD0 /* fotonLiveAudio.h */,
-				D6F8BA370A65D6F8C3DA7AC5 /* fotonLiveBase.cpp */,
-				3AFD8D38F741064311C18A90 /* fotonLiveBase.h */,
+				BD4563B71ECDD6A4003797F0 /* view */,
+				BD4563B61ECDD68C003797F0 /* fotonBase */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -747,6 +770,7 @@
 				CC4101C0E5B5912EE24140E1 /* src_sinc.c in Sources */,
 				5A78AB8D979B8358C27704F2 /* src_zoh.c in Sources */,
 				7A61C288AE942E5885881232 /* ofxEasyFft.cpp in Sources */,
+				BD4563BA1ECDD6BB003797F0 /* moriokaView.cpp in Sources */,
 				D409288D137DB82107887FFD /* ofxFft.cpp in Sources */,
 				007F713E619B81D821BEA319 /* ofxFftBasic.cpp in Sources */,
 				29938E05AF78B3DF7A591187 /* ofxFftw.cpp in Sources */,

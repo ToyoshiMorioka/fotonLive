@@ -10,15 +10,22 @@
 #define fotonLiveBase_h
 
 #include "ofMain.h"
-#include "ofxBTrack.h"
+#include "fotonLiveAudio.h"
+#include "fotonConst.h"
 
 class fotonLiveBase {
-    bool setupFlag;
-
-    void setup();
-    void update();
-    void draw();
+public:
+    fotonLiveBase();
+    virtual ~fotonLiveBase();
+    virtual void draw();
     
+    void setup(fotonLiveAudio* audio);
+    ofFbo drawAndGetFbo();
+    
+private:
+    bool setupFlag;
+    fotonLiveAudio* myAudio;
+    ofFbo fbo;
     // ofSoundStream sound;
 };
 

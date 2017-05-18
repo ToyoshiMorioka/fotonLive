@@ -3,7 +3,7 @@
 #include "ofMain.h"
 
 #include "fotonLiveAudio.h"
-
+#include "moriokaView.h"
 class ofApp : public ofBaseApp{
 
 	public:
@@ -24,4 +24,10 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
     fotonLiveAudio audio;
+    
+    void audioDataDraw();
+    
+    // akagawaVis akagawa;
+    
+    moriokaView view1;
 };

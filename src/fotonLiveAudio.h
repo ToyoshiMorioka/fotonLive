@@ -12,13 +12,11 @@
 #include "ofMain.h"
 #include "ofxBTrack.h"
 #include "ofxFft.h"
+#include "fotonConst.h"
 
 class fotonLiveAudio : public ofBaseApp{
     
 public:
-    const static int sampleRate = 44100;
-    const static int bufferSize = 256;
-    constexpr static float bTrackThreshold = 0.75;
     float smoothedVol;
     float scaledVol;
     

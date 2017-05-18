@@ -9,7 +9,6 @@
 #include "fotonLiveAudio.h"
 
 void fotonLiveAudio::setup(){
-
     
     // 0 output channels,
     // 2 input channels
@@ -21,27 +20,26 @@ void fotonLiveAudio::setup(){
     
     //if you want to set a different device id
     //soundStream.setDeviceID(0); //bear in mind the device id corresponds to all audio devices, including  input-only and output-only devices.
-    soundStream.setDeviceID(0);
+    soundStream.setDeviceID(3);
     
     // Setup Audio Input
     //    ofSoundStreamSetup(0, 1, sampleRate, bufferSize, 4);
-    soundStream.setup(this, 0, 2, sampleRate, bufferSize, 4);
+    soundStream.setup(this, 0, 2, fotonLiveAudio_SampleRate, fotonLiveAudio_BufferSize, 4);
     soundStream.start();
     
     smoothedVol = 0.0;
     scaledVol = 0.0;
     
-    
     // ofxBTrack
     
     // Setup frame size
-    bTrack.setup(bufferSize);
+    bTrack.setup(fotonLiveAudio_BufferSize);
     
     // FIX: this is experimental inplementation.
-    bTrack.setConfidentThreshold(bTrackThreshold);
+    bTrack.setConfidentThreshold(fotonLiveAudio_BTrackThreshold);
     
     // ofxFft
-    fft = ofxFft::create(bufferSize, OF_FFT_WINDOW_HAMMING);
+    fft = ofxFft::create(fotonLiveAudio_BufferSize, OF_FFT_WINDOW_HAMMING);
     rawSpectrum.resize(fft->getBinSize());
     normalSpectrum.resize(fft->getBinSize());
     
