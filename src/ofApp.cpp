@@ -4,6 +4,7 @@
 void ofApp::setup(){
     audio.setup();
     view1.setup(&audio);
+    higashi.setup(&audio);
 }
 
 //--------------------------------------------------------------
@@ -13,8 +14,9 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    //audioDataDraw();
-    ofFbo temp = view1.drawAndGetFbo();
+    audioDataDraw();
+    ofSetColor(255);
+    ofFbo temp = higashi.drawAndGetFbo();
     temp.draw(0, 0);
 }
 
