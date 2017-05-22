@@ -22,9 +22,12 @@ public:
     void setup(fotonLiveAudio* audio);
     ofFbo drawAndGetFbo();
     
+protected:
+    fotonLiveAudio* myAudio;
+    
 private:
     bool setupFlag;
-    fotonLiveAudio* myAudio;
+    
     ofFbo fbo;
     // ofSoundStream sound;
 };
