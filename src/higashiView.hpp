@@ -15,10 +15,14 @@ class higashiView: public fotonLiveBase{
 public:
     higashiView();
     ~higashiView(){}
+    void reloadShader();
     void draw();
     
 private:
     ofShader shader;
+    ofShader effector;
+    ofVec2f resolution;
+    ofFbo baseFbo;
 };
 
 

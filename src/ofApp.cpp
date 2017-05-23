@@ -14,15 +14,29 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    audioDataDraw();
     ofSetColor(255);
     ofFbo temp = higashi.drawAndGetFbo();
-    temp.draw(0, 0);
+    temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+    
+    if(showAudioData){
+        audioDataDraw();
+        ofSetColor(0);
+        ofDrawBitmapString(ofGetFrameRate(), 30, 25);
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    switch(key){
+        case 'r':
+            higashi.reloadShader();
+            break;
+        case 'a':
+            showAudioData = !showAudioData;
+            break;
+        default:
+            break;
+    }
 }
 
 //--------------------------------------------------------------

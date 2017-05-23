@@ -32,4 +32,5 @@ public:
     // akagawaVis akagawa;
     higashiView higashi;
     moriokaView view1;
+    bool showAudioData{false};
 };
