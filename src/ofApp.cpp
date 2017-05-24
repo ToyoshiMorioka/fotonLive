@@ -53,7 +53,7 @@ void ofApp::keyPressed(int key){
             showAudioData = !showAudioData;
             break;
         case ' ':
-            developer = static_cast<Developer>((static_cast<int>(developer)+1)%2);
+            developer = static_cast<Developer>((static_cast<int>(developer)+1)%3);
             break;
         default:
             break;

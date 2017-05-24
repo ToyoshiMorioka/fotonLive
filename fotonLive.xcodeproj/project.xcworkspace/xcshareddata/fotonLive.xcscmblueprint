@@ -1,0 +1,44 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "96D1615A226ED74956AC450A3A1DF2ABCD88F45A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "84CE04532A76281E9D0C7B3A7EFCDC0E12CAC6FA" : 9223372036854775807,
+    "95F70890EFD46183734FEDFE52CF53391DE6937E" : 9223372036854775807,
+    "134A39A997C67A1D222420FC9F8429429DE445F1" : 9223372036854775807,
+    "96D1615A226ED74956AC450A3A1DF2ABCD88F45A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "93D89BEC-87A6-46D9-B1E1-535988D3CF40",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "84CE04532A76281E9D0C7B3A7EFCDC0E12CAC6FA" : "..\/..\/addons\/ofxFft",
+    "95F70890EFD46183734FEDFE52CF53391DE6937E" : "..\/..\/addons\/ofxPostProcessing",
+    "134A39A997C67A1D222420FC9F8429429DE445F1" : "..\/..\/addons\/ofxBTrack",
+    "96D1615A226ED74956AC450A3A1DF2ABCD88F45A" : "fotonLive\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "fotonLive",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "fotonLive.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/naotokui\/ofxBTrack.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "134A39A997C67A1D222420FC9F8429429DE445F1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kylemcdonald\/ofxFft.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "84CE04532A76281E9D0C7B3A7EFCDC0E12CAC6FA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/neilmendoza\/ofxPostProcessing.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "95F70890EFD46183734FEDFE52CF53391DE6937E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ToyoshiMorioka\/fotonLive.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96D1615A226ED74956AC450A3A1DF2ABCD88F45A"
+    }
+  ]
+}
