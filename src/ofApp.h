@@ -4,10 +4,9 @@
 
 #include "fotonLiveAudio.h"
 #include "moriokaView.h"
+#include "higashiView.hpp"
 #include "akagawaView.h"
-
-class ofApp : public ofBaseApp{
-    
+class ofApp : public ofBaseApp{    
 public:
     void setup();
     void update();
@@ -29,7 +28,13 @@ public:
     
     void audioDataDraw();
     
-    moriokaView view1;
     akagawaView akgwView;
-    
+    // akagawaVis akagawa;
+    higashiView higashi;
+    moriokaView view1;
+    bool showAudioData{false};
+    enum class Developer: int{
+        Morioka, Akagawa, Higashi
+    };
+    Developer developer = Developer::Higashi;
 };

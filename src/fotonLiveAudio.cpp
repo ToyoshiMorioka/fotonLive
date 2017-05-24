@@ -20,12 +20,12 @@ void fotonLiveAudio::setup(){
     
     //if you want to set a different device id
     //soundStream.setDeviceID(0); //bear in mind the device id corresponds to all audio devices, including  input-only and output-only devices.
-    soundStream.setDeviceID(3);
+    soundStream.setDeviceID(2);
     
     // Setup Audio Input
     //    ofSoundStreamSetup(0, 1, sampleRate, bufferSize, 4);
     soundStream.setup(this, 0, 2, fotonLiveAudio_SampleRate, fotonLiveAudio_BufferSize, 4);
-    soundStream.start();
+//    soundStream.start();
     
     smoothedVol = 0.0;
     scaledVol = 0.0;
