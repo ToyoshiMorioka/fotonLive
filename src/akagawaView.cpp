@@ -68,6 +68,7 @@ akagawaView::akagawaView(){
     count =0;
     totalCount =0;
     rotatePattern =0;
+    showGui = false;
     for(int i = 0 ; i< 16; i++){
         v_audio.push_back(0.0);
     }
@@ -184,6 +185,10 @@ void akagawaView::setRotatePattern(int i){
     }else{
         autoRotateForce = ofVec3f(0,0,1);
     }
+}
+void akagawaView::toggleGui(){
+
+    showGui =!showGui;
 }
 
 
@@ -437,6 +442,6 @@ void akagawaView::draw(){
 //        ofDrawCircle(50, 10, 10);
 //    }
     
-//    panel.draw();
+    if(showGui)panel.draw();
     
 }

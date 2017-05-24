@@ -31,6 +31,10 @@ void ofApp::keyPressed(int key){
     if(key == OF_KEY_RETURN){
         akgwView.changeTrigger();
     }
+    if(key == 'g'){
+        akgwView.toggleGui();
+
+    }
     
 }
 

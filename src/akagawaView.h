@@ -31,9 +31,11 @@ public:
     void setRotatePattern(int i);
     
     void changeTrigger();
+    void toggleGui();
 private:
     ofEasyCam cam;
     
+    bool showGui;
     ofxPanel panel;
     ofParameter<ofFloatColor> lineColor;
     ofParameter<ofColor> bgColor;
