@@ -4,73 +4,84 @@
 void ofApp::setup(){
     audio.setup();
     view1.setup(&audio);
+    akgwView.setup(&audio);
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     //audioDataDraw();
     ofFbo temp = view1.drawAndGetFbo();
-    temp.draw(0, 0);
+    ofFbo temp2 = akgwView.drawAndGetFbo();
+    
+    temp2.draw(0, 0);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    //akagawa degug---------
+    if(key >=48&&key <58){
+        akgwView.setRotatePattern(key-48);
+    }
+    if(key == OF_KEY_RETURN){
+        akgwView.changeTrigger();
+    }
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseExited(int x, int y){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::gotMessage(ofMessage msg){
-
+    
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
+void ofApp::dragEvent(ofDragInfo dragInfo){
+    
 }
 
 //--------------------------------------------------------------
