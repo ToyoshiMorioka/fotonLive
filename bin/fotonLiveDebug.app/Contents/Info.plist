@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>16E195</string>
+	<string>16F73</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
@@ -38,5 +38,7 @@
 	<string>0832</string>
 	<key>DTXcodeBuild</key>
 	<string>8E2002</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
 </dict>
 </plist>

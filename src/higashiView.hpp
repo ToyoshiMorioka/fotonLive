@@ -10,6 +10,7 @@
 #define higashiView_hpp
 
 #include "fotonLiveBase.h"
+#include "fotonConst.h"
 
 class higashiView: public fotonLiveBase{
 public:

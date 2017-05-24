@@ -5,18 +5,36 @@ void ofApp::setup(){
     audio.setup();
     view1.setup(&audio);
     higashi.setup(&audio);
+    akgwView.setup(&audio);
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    
     ofSetColor(255);
-    ofFbo temp = higashi.drawAndGetFbo();
-    temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+    ofFbo temp, temp2;
+    switch(developer){
+        case Developer::Morioka:
+            break;
+        case Developer::Akagawa:
+            temp = view1.drawAndGetFbo();
+            temp2 = akgwView.drawAndGetFbo();
+            temp2.draw(0, 0);
+            break;
+        case Developer::Higashi:
+            temp = higashi.drawAndGetFbo();
+            temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            break;
+        default:
+            break;
+    }
+    
     
     if(showAudioData){
         audioDataDraw();
@@ -34,59 +52,74 @@ void ofApp::keyPressed(int key){
         case 'a':
             showAudioData = !showAudioData;
             break;
+        case ' ':
+            developer = static_cast<Developer>((static_cast<int>(developer)+1)%2);
+            break;
         default:
             break;
     }
+    //akagawa degug---------
+    if(key >=48&&key <58){
+        akgwView.setRotatePattern(key-48);
+    }
+    if(key == OF_KEY_RETURN){
+        akgwView.changeTrigger();
+    }
+    if(key == 'g'){
+        akgwView.toggleGui();
+
+    }
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseExited(int x, int y){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::gotMessage(ofMessage msg){
-
+    
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
+void ofApp::dragEvent(ofDragInfo dragInfo){
+    
 }
 
 //--------------------------------------------------------------

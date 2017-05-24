@@ -26,6 +26,7 @@ void fotonLiveBase::setup(fotonLiveAudio *audio){
 
 ofFbo fotonLiveBase::drawAndGetFbo(){
     fbo.begin();
+    ofClear(0);
     draw();
     fbo.end();
     return fbo;

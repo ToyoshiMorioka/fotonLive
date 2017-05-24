@@ -10,7 +10,7 @@
 
 higashiView::higashiView(){
     reloadShader();
-    resolution = ofVec2f(ofGetWindowWidth(), ofGetWindowHeight());
+    resolution = ofVec2f(fotonLiveBase_FBOFinalWidth, fotonLiveBase_FBOFinalHeight);
     baseFbo.allocate(resolution.x, resolution.y);
 }
 

@@ -35,6 +35,7 @@
 		67FE4C7B15C2F0478C8126C2 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B361208CD4107E479F04E7B /* NetworkingUtils.cpp */; };
 		6A505EAE8088949A9180FFE7 /* GodRaysPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C07AAE715D8853EDA76BC909 /* GodRaysPass.cpp */; };
 		6DB9E3911BA6216FE1F0E91C /* kiss_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = DACFE8C08D7F4619176E65D7 /* kiss_fftr.c */; };
+		6E8D91001ED52B0B007DEFF0 /* akagawaView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6E8D90FE1ED52B0B007DEFF0 /* akagawaView.cpp */; };
 		6FF5AAF4CB023FE987D7542A /* kiss_fft.c in Sources */ = {isa = PBXBuildFile; fileRef = 6FC8DDBE65E82E7C462790C2 /* kiss_fft.c */; };
 		72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65EEFA3DA3526E9CDD9C21F9 /* ofxOscBundle.cpp */; };
 		778DCA6792476E5B9F57F175 /* ConvolutionPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AACD9661AF21261E24A05A4 /* ConvolutionPass.cpp */; };
@@ -63,6 +64,7 @@
 		BE5ED1FDB18D5092CF3AACA0 /* PostProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 484F662699DFE8176E1B750F /* PostProcessing.cpp */; };
 		C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC8881B3C8C0A1C45F042E7A /* OscPrintReceivedElements.cpp */; };
 		CC4101C0E5B5912EE24140E1 /* src_sinc.c in Sources */ = {isa = PBXBuildFile; fileRef = 511E78AF8097CC7AF824127A /* src_sinc.c */; };
+		CE23FA321ED54E7F00A466C7 /* higashiView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE23FA301ED54E7F00A466C7 /* higashiView.cpp */; };
 		D409288D137DB82107887FFD /* ofxFft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32CA89CD22339F4F9433CAF6 /* ofxFft.cpp */; };
 		D752EB8BA905C25F5E7F2B30 /* ZoomBlurPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF8D27B3DEDC121DE85F5B7B /* ZoomBlurPass.cpp */; };
 		DFB75F1EBE744A456AC999F4 /* ContrastPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6788311DC7D945282047837A /* ContrastPass.cpp */; };
@@ -160,6 +162,8 @@
 		6AF187A99EECFB13E3BCCD33 /* LimbDarkeningPass.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = LimbDarkeningPass.h; path = ../../../addons/ofxPostProcessing/src/LimbDarkeningPass.h; sourceTree = SOURCE_ROOT; };
 		6B65E6930994CC4B2D2B8B33 /* OscPacketListener.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = OscPacketListener.h; path = ../../../addons/ofxOsc/libs/oscpack/src/osc/OscPacketListener.h; sourceTree = SOURCE_ROOT; };
 		6BBE5C9251660EA96B398017 /* SSAOPass.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = SSAOPass.h; path = ../../../addons/ofxPostProcessing/src/SSAOPass.h; sourceTree = SOURCE_ROOT; };
+		6E8D90FE1ED52B0B007DEFF0 /* akagawaView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = akagawaView.cpp; sourceTree = "<group>"; };
+		6E8D90FF1ED52B0B007DEFF0 /* akagawaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = akagawaView.h; sourceTree = "<group>"; };
 		6FC8DDBE65E82E7C462790C2 /* kiss_fft.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = kiss_fft.c; path = ../../../addons/ofxBTrack/libs/kiss_fft130/kiss_fft.c; sourceTree = SOURCE_ROOT; };
 		7462D018F6D6E407E598A021 /* PixelatePass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = PixelatePass.cpp; path = ../../../addons/ofxPostProcessing/src/PixelatePass.cpp; sourceTree = SOURCE_ROOT; };
 		74BDDD14F49833AD24862E87 /* RimHighlightingPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = RimHighlightingPass.cpp; path = ../../../addons/ofxPostProcessing/src/RimHighlightingPass.cpp; sourceTree = SOURCE_ROOT; };
@@ -216,6 +220,8 @@
 		C88333E71C9457E441C33474 /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../../addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		CAB67BC7A1CC020FDAC5381B /* ofxEasyFft.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxEasyFft.h; path = ../../../addons/ofxFft/src/ofxEasyFft.h; sourceTree = SOURCE_ROOT; };
 		CC725CAE0A003458E5573DF9 /* GodRaysPass.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = GodRaysPass.h; path = ../../../addons/ofxPostProcessing/src/GodRaysPass.h; sourceTree = SOURCE_ROOT; };
+		CE23FA301ED54E7F00A466C7 /* higashiView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = higashiView.cpp; sourceTree = "<group>"; };
+		CE23FA311ED54E7F00A466C7 /* higashiView.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = higashiView.hpp; sourceTree = "<group>"; };
 		CE67198F2891A8FFEA3686E6 /* ofxFftBasic.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxFftBasic.cpp; path = ../../../addons/ofxFft/src/ofxFftBasic.cpp; sourceTree = SOURCE_ROOT; };
 		D30B5AC1775B774A5E976A0E /* samplerate.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 30; name = samplerate.c; path = ../../../addons/ofxBTrack/libs/libsamplerate/samplerate.c; sourceTree = SOURCE_ROOT; };
 		D32BBA6DEBCF11DEA0CAE0E0 /* mid_qual_coeffs.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = mid_qual_coeffs.h; path = ../../../addons/ofxBTrack/libs/libsamplerate/mid_qual_coeffs.h; sourceTree = SOURCE_ROOT; };
@@ -546,6 +552,10 @@
 		BD4563B71ECDD6A4003797F0 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				6E8D90FE1ED52B0B007DEFF0 /* akagawaView.cpp */,
+				6E8D90FF1ED52B0B007DEFF0 /* akagawaView.h */,
+				CE23FA301ED54E7F00A466C7 /* higashiView.cpp */,
+				CE23FA311ED54E7F00A466C7 /* higashiView.hpp */,
 				BD4563B81ECDD6BB003797F0 /* moriokaView.cpp */,
 				BD4563B91ECDD6BB003797F0 /* moriokaView.h */,
 			);
@@ -781,6 +791,7 @@
 				B266578FC55D23BFEBC042E7 /* ofxGuiGroup.cpp in Sources */,
 				483908258D00B98B4BE69F07 /* ofxLabel.cpp in Sources */,
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
+				CE23FA321ED54E7F00A466C7 /* higashiView.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
@@ -803,6 +814,7 @@
 				B58A80B21A55E254F48E6E13 /* DofAltPass.cpp in Sources */,
 				114C00B13F753E59BB0984BB /* DofPass.cpp in Sources */,
 				AE65C02FEC934514466A8D67 /* EdgePass.cpp in Sources */,
+				6E8D91001ED52B0B007DEFF0 /* akagawaView.cpp in Sources */,
 				33DB731E964056D7E35604A7 /* FakeSSSPass.cpp in Sources */,
 				04C13EEA813A786CC1D8137A /* FxaaPass.cpp in Sources */,
 				6A505EAE8088949A9180FFE7 /* GodRaysPass.cpp in Sources */,
