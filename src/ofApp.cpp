@@ -11,7 +11,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    
+    ofSetWindowTitle(ofToString(ofGetFrameRate(), 0));
 }
 
 //--------------------------------------------------------------
@@ -53,7 +53,7 @@ void ofApp::keyPressed(int key){
             showAudioData = !showAudioData;
             break;
         case ' ':
-            developer = static_cast<Developer>((static_cast<int>(developer)+1)%3);
+            developer = static_cast<Developer>((static_cast<int>(developer) + 1) % DeveloperNumber);
             break;
         default:
             break;
@@ -169,7 +169,7 @@ void ofApp::audioDataDraw(){
     ofSetColor(ofColor::blue.r, ofColor::blue.g, ofColor::blue.b, 128);
     
     float width = (float)ofGetWidth() / (float)spectrum.size()*2;
-    for (int i = 0; i < spectrum.size()/2; i++) {
+    for (int i = 0; i < spectrum.size() / 2; i++) {
         
         float posx = (float)i * width;
         float posy = ofGetHeight();
@@ -179,8 +179,8 @@ void ofApp::audioDataDraw(){
     
     // draw normal spectrum
     ofSetColor(ofColor::red.r, ofColor::red.g, ofColor::red.b, 128);
-    float nWidth = (float)ofGetWidth() / (float)nSpectrum.size()*2;
-    for (int i = 0; i < nSpectrum.size()/2; i++) {
+    float nWidth = (float)ofGetWidth() / (float)nSpectrum.size() * 2;
+    for (int i = 0; i < nSpectrum.size() / 2; i++) {
         
         float posx = (float)i * width;
         float posy = ofGetHeight();

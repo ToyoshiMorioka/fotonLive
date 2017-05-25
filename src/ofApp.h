@@ -6,6 +6,7 @@
 #include "moriokaView.h"
 #include "higashiView.hpp"
 #include "akagawaView.h"
+
 class ofApp : public ofBaseApp{    
 public:
     void setup();
@@ -24,15 +25,18 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    fotonLiveAudio audio;
-    
     void audioDataDraw();
     
+    fotonLiveAudio audio;
     akagawaView akgwView;
     // akagawaVis akagawa;
     higashiView higashi;
     moriokaView view1;
+    
     bool showAudioData{false};
+    
+    // displayed developer info
+    static const int DeveloperNumber = 3;
     enum class Developer: int{
         Morioka, Akagawa, Higashi
     };
