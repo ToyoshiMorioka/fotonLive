@@ -9,7 +9,7 @@
 #include "fotonLiveBase.h"
 
 fotonLiveBase::fotonLiveBase(){
-    fbo.allocate(ofGetWidth(), ofGetHeight(), fotonLiveBase_FBOFinalColorMode);
+    fbo.allocate(fotonLiveBase_FBOFinalWidth, fotonLiveBase_FBOFinalHeight, fotonLiveBase_FBOFinalColorMode);
 }
 
 fotonLiveBase::~fotonLiveBase(){

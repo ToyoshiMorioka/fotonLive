@@ -25,7 +25,7 @@ void ofApp::draw(){
         case Developer::Akagawa:
             temp = view1.drawAndGetFbo();
             temp2 = akgwView.drawAndGetFbo();
-            temp2.draw(0, 0);
+            temp2.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         case Developer::Higashi:
             temp = higashi.drawAndGetFbo();
@@ -48,6 +48,9 @@ void ofApp::keyPressed(int key){
     switch(key){
         case 'r':
             higashi.reloadShader();
+            break;
+        case 's':
+            higashi.switchShader();
             break;
         case 'a':
             showAudioData = !showAudioData;
