@@ -30,8 +30,10 @@ murataView::murataView(){
     colorSet[1] = ofColor(217,247,150);
     colorSet[2] = ofColor(28,21,24);
     colorSet[3] = ofColor(185,254,237);
-    colorSet[5] = ofColor(231,14,78);
     colorSet[4] = ofColor(45,61,150);
+    colorSet[5] = ofColor(231,14,78);
+    colorSet[6] = ofColor(190,104,64);
+    colorSet[7] = ofColor(52,100,102);
     
     mix = 0;
     positiveMix = true;
@@ -46,12 +48,10 @@ murataView::~murataView(){
 
 void murataView::draw(){
     
-    //アルファチャンネル(透明度)を使用可能に
-    ofEnableAlphaBlending();
-    //混色を、加算混色に
+//    ofEnableAlphaBlending();
     glBlendFunc(GL_ONE, GL_ONE);
     
-    int colorIndex = scene % 3;
+    int colorIndex = scene % 4;
     
     ofBackground(colorSet[colorIndex*2]);
 
@@ -62,9 +62,9 @@ void murataView::draw(){
     rotateZ = rotateZ - 0.1;
     
     if(positiveMix &&  moveTrigger){
-        mix = mix + 0.1;
+        mix = mix + 0.05;
     }else if(!positiveMix && moveTrigger){
-        mix = mix - 0.1;
+        mix = mix - 0.05;
     }
     if(mix > 1 && moveTrigger){
         mix = 1;
@@ -125,7 +125,7 @@ void murataView::draw(){
         hasBeatHistory.insert(hasBeatHistory.begin(),false);
     }
     
-    if(inputHistory.size() > 200.0){
+    if(inputHistory.size() > 100){
         inputHistory.pop_back();
         hasBeatHistory.pop_back();
     }
@@ -144,7 +144,7 @@ void murataView::draw(){
             line.setStrokeColor(colorSet[colorIndex*2+1]);
             line.setFillColor(colorSet[colorIndex*2+1]);
             line.setFilled(enableFill);
-            line.setStrokeWidth(4);
+            line.setStrokeWidth(10);
         }
         
         float tempMax = 0;
@@ -157,13 +157,13 @@ void murataView::draw(){
             int index = (int)inputHistory[i].size() - j - 1;
             float lineX = -1 *((float)j - ( inputHistory[i].size() / 2) )* 10;
             float lineY = -inputHistory[i][j] * 300;
-            float lineZ = i*-100 + 500;
+            float lineZ = i*-200 + 500;
             
             float theta = 2*3.14 / inputHistory[i].size() * j;
             
             float circleX = sin(theta) * radius + (inputHistory[i][j]*200) ;
             float circleY = cos(theta) * radius + (inputHistory[i][j]*200);
-            float circleZ = i*-100 + 500 + ((1/inputHistory[i].size() * j) * -100);
+            float circleZ = i*-200 + 500 + ((1/inputHistory[i].size() * j) * -100);
             
             float posX = lineX * mixHistory[i] + circleX *  (1-mixHistory[i]);
             float posY = lineY* mixHistory[i] + circleY *  (1-mixHistory[i]);
