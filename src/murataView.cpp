@@ -11,26 +11,6 @@
 murataView::murataView(){
     ofTrueTypeFont::setGlobalDpi(72);
     
-    verdana14.load("verdana.ttf", 14, true, true);
-    verdana14.setLineHeight(18.0f);
-    verdana14.setLetterSpacing(1.037);
-    
-    verdana30.load("verdana.ttf", 30, true, true);
-    verdana30.setLineHeight(34.0f);
-    verdana30.setLetterSpacing(1.035);
-    
-    verdana14A.load("verdana.ttf", 14, false);
-    verdana14A.setLineHeight(18.0f);
-    verdana14A.setLetterSpacing(1.037);
-    
-    franklinBook14.load("frabk.ttf", 14);
-    franklinBook14.setLineHeight(18.0f);
-    franklinBook14.setLetterSpacing(1.037);
-    
-    franklinBook14A.load("frabk.ttf", 14, false);
-    franklinBook14A.setLineHeight(18.0f);
-    franklinBook14A.setLetterSpacing(1.037);
-    
     // Setup post-processing chain
     post.init(ofGetWidth(), ofGetHeight());
 //    post.createPass<BloomPass>();
@@ -38,15 +18,6 @@ murataView::murataView(){
 //    post.createPass<NoiseWarpPass>();
 //    post.createPass<KaleidoscopePass>();
     
-//    post.createPass<FxaaPass>()->setEnabled(false);
-//    ->setEnabled(false);
-//    post.createPass<DofPass>()->setEnabled(false);
-//    post.createPass<KaleidoscopePass>()->setEnabled(false);
-//    post.createPass<NoiseWarpPass>()->setEnabled(false);
-//    post.createPass<PixelatePass>()->setEnabled(false);
-//    post.createPass<EdgePass>()->setEnabled(false);
-//    post.createPass<VerticalTiltShifPass>()->setEnabled(false);
-//    post.createPass<GodRaysPass>()->setEnabled(false);
     
     count = 0;
     scene = 0;
@@ -205,8 +176,6 @@ void murataView::draw(){
 //                tempi = posx;
 //            }
             
-            
-            
         }
 
 
@@ -221,72 +190,5 @@ void murataView::draw(){
     
     post.end();
 
-//    audioDataDraw();
 }
 
-//--------------------------------------------------------------
-void murataView::audioDataDraw(){
-    // audio data
-    
-    float bpm = myAudio->bpm();
-    float bpmconfidence = myAudio->confidence();
-    bool hasBeat = myAudio->hasBeat();
-    vector<float> leftInput = myAudio->getLeftInput();
-    vector<float> rightInput = myAudio->getRightInput();
-    vector<float> spectrum = myAudio->getRawSpectrum();
-    vector<float> nSpectrum = myAudio->getNormalSpectrum();
-
-    // draw BPM
-//    ofSetColor(ofColor::black);
-//    ofDrawBitmapString("Estimated BPM: " + ofToString(bpm, 1), 30, 50);
-//    ofDrawBitmapString("Confidence: " + ofToString(bpmconfidence, 2), 30, 75); // confidence is an experimental feature at this moment
-//    
-    // draw Beat
-    ofDrawBitmapString("BEAT", 85, 195);
-    if (hasBeat) {    //FIXME: calling this method resets hasBeat flag in ofxBTrack object
-        ofSetColor(ofColor::magenta);
-    } else ofSetColor(ofColor::lightGray);
-    ofDrawCircle(100, 150, 30);
-    
-    ofSetColor(ofColor::magenta);
-    ofDrawCircle(200, 150, 30 * myAudio->scaledVol);
-    
-    // draw left right input
-    
-//    float inputWidth = (float)ofGetWidth() / (float)leftInput.size();
-//    for (int i = 0; i < leftInput.size(); i++) {
-//        
-//        float posx = (float)i * inputWidth;
-//        float posy = ofGetHeight() - 300;
-//        float height = -leftInput[i] * 300.0;
-//        ofSetColor(ofColor::blue.r, ofColor::blue.g, ofColor::blue.b, 128);
-//        ofDrawRectangle(posx, posy, inputWidth, height);
-    
-//        height = -rightInput[i] * 300.0;
-//        ofSetColor(ofColor::red.r, ofColor::red.g, ofColor::red.b, 128);
-//        ofDrawRectangle(posx, posy, inputWidth, height);
-//    }
-    
-    // draw raw spectrum
-//    ofSetColor(ofColor::blue.r, ofColor::blue.g, ofColor::blue.b, 128);
-//    
-//    float width = (float)ofGetWidth() / (float)spectrum.size()*2;
-//    for (int i = 0; i < spectrum.size()/2; i++) {
-//        float posx = (float)i * width;
-//        float posy = ofGetHeight();
-//        float height = -spectrum[i] * 300.0;
-//        ofDrawRectangle(posx, posy, width, height);
-//    }
-    
-//    // draw normal spectrum
-//    ofSetColor(ofColor::red.r, ofColor::red.g, ofColor::red.b, 128);
-//    float nWidth = (float)ofGetWidth() / (float)nSpectrum.size()*2;
-//    for (int i = 0; i < nSpectrum.size()/2; i++) {
-//        
-//        float posx = (float)i * width;
-//        float posy = ofGetHeight();
-//        float height = -nSpectrum[i] * 300.0;
-//        ofDrawRectangle(posx, posy, width, height);
-//    }
-    
-}

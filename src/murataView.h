@@ -27,13 +27,6 @@ private:
     vector<float> mixHistory;
     vector<bool> hasBeatHistory;
     
-    ofTrueTypeFont  franklinBook14;
-    ofTrueTypeFont	verdana14;
-    ofTrueTypeFont	verdana30;
-    
-    ofTrueTypeFont  franklinBook14A;
-    ofTrueTypeFont	verdana14A;
-    
     int count;
     int tempCount;
     int scene;
