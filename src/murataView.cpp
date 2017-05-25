@@ -82,26 +82,26 @@ void murataView::draw(){
 //    easyCam.begin();
     post.begin(easyCam);
     
-    ofLog(OF_LOG_NOTICE, "posX is %f", easyCam.getGlobalPosition().x);
-    ofLog(OF_LOG_NOTICE, "posY is %f", easyCam.getGlobalPosition().y);
-    ofLog(OF_LOG_NOTICE, "posZ is %f", easyCam.getGlobalPosition().z);
-    ofLog(OF_LOG_NOTICE, "oriX is %f", easyCam.getGlobalOrientation().x());
-    ofLog(OF_LOG_NOTICE, "oriy is %f", easyCam.getGlobalOrientation().y());
-    ofLog(OF_LOG_NOTICE, "oriz is %f", easyCam.getGlobalOrientation().z());
-    ofLog(OF_LOG_NOTICE, "oriw is %f", easyCam.getGlobalOrientation().w());
+//    ofLog(OF_LOG_NOTICE, "posX is %f", easyCam.getGlobalPosition().x);
+//    ofLog(OF_LOG_NOTICE, "posY is %f", easyCam.getGlobalPosition().y);
+//    ofLog(OF_LOG_NOTICE, "posZ is %f", easyCam.getGlobalPosition().z);
+//    ofLog(OF_LOG_NOTICE, "oriX is %f", easyCam.getGlobalOrientation().x());
+//    ofLog(OF_LOG_NOTICE, "oriy is %f", easyCam.getGlobalOrientation().y());
+//    ofLog(OF_LOG_NOTICE, "oriz is %f", easyCam.getGlobalOrientation().z());
+//    ofLog(OF_LOG_NOTICE, "oriw is %f", easyCam.getGlobalOrientation().w());
 
     if(hasBeat){
         count++;
     }
     
     if(count % 4 == 0 && count != tempCount  ){
-        rotate.set(ofRandom(-20,20),ofRandom(-90,90),ofRandom(-90,90)); // now v1.x is 10, v1.y is 50, v1.z is 80
+        rotate.set(ofRandom(-20,20),ofRandom(-60,60),ofRandom(-90,90)); // now v1.x is 10, v1.y is 50, v1.z is 80
         count = tempCount;
         scene++;
         enableFill = !enableFill;
 //        mix = ofRandom(0,1);
     }
-    if(scene % 4 == 0 &&  scene != tempScene  ){
+    if(scene % 3 == 0 &&  scene != tempScene  ){
         tempScene = scene;
         if(!moveTrigger){
             moveTrigger =  true;
@@ -137,12 +137,12 @@ void murataView::draw(){
         ofPath line = ofPath();
         if(hasBeatHistory[i] || i == 0){
             line.setStrokeColor(colorSet[colorIndex*2+1]);
-            line.setFillColor(colorSet[colorIndex*2+1]);
+            line.setFillColor(colorSet[colorIndex*2-1]);
             line.setFilled(enableFill);
             line.setStrokeWidth(10);
         }else{
             line.setStrokeColor(colorSet[colorIndex*2+1]);
-            line.setFillColor(colorSet[colorIndex*2+1]);
+            line.setFillColor(colorSet[colorIndex*2-1]);
             line.setFilled(enableFill);
             line.setStrokeWidth(10);
         }
@@ -157,13 +157,13 @@ void murataView::draw(){
             int index = (int)inputHistory[i].size() - j - 1;
             float lineX = -1 *((float)j - ( inputHistory[i].size() / 2) )* 10;
             float lineY = -inputHistory[i][j] * 300;
-            float lineZ = i*-200 + 500;
+            float lineZ = i*-200+ 500;
             
             float theta = 2*3.14 / inputHistory[i].size() * j;
             
             float circleX = sin(theta) * radius + (inputHistory[i][j]*200) ;
             float circleY = cos(theta) * radius + (inputHistory[i][j]*200);
-            float circleZ = i*-200 + 500 + ((1/inputHistory[i].size() * j) * -100);
+            float circleZ = i*-200 + 500 + ((1.0/(float)inputHistory[i].size() * j) * -200);
             
             float posX = lineX * mixHistory[i] + circleX *  (1-mixHistory[i]);
             float posY = lineY* mixHistory[i] + circleY *  (1-mixHistory[i]);
