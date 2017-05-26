@@ -5,6 +5,7 @@ uniform float bpm;
 uniform float volume;
 uniform sampler2DRect result;
 uniform vec2 result_resolution;
+uniform int state;
 
 vec2 upCoord(){
     return gl_FragCoord.xy*result_resolution/iResolution;
@@ -55,12 +56,22 @@ vec4 effect_glitch(){
     return color;   
 }
 
+bool bitState(int bitPos){
+    int temp = state; //0101
+    for(int i = 1; i < bitPos; ++i){
+        int v = int(mod(temp, pow(2, i))); // 0001, 0000
+        temp -= v; // 0100, 0100
+    }
+    if(int(mod(temp, pow(2, bitPos))) != 0) return true;
+    else return false;
+}
+
 void main()
 {
     float shift = beat(iGlobalTime/8.0, 6.0);
     gl_FragColor = texture2DRect(result, upCoord());
-    gl_FragColor = mix(gl_FragColor, effect_glitch(), shift);
-    //gl_FragColor = mix(gl_FragColor, effect_mosaic(), 0.7);
-    gl_FragColor = mix(gl_FragColor, effect_shift(), 0.6);
+    if(bitState(1))gl_FragColor = mix(gl_FragColor, effect_glitch(), shift);
+    if(bitState(2))gl_FragColor = mix(gl_FragColor, effect_mosaic(), 0.7);
+    if(bitState(3))gl_FragColor = mix(gl_FragColor, effect_shift(), 0.6);
     // gl_FragColor = texture2DRect(result, upCoord());
 }

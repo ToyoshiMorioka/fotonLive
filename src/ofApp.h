@@ -29,7 +29,6 @@ public:
     
     fotonLiveAudio audio;
     akagawaView akgwView;
-    // akagawaVis akagawa;
     higashiView higashi;
     moriokaView view1;
     

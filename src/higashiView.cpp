@@ -32,7 +32,10 @@ void higashiView::switchShader(){
 }
 
 void higashiView::switchEffector(){
-    
+    currentEffect = 0;
+    if(ofRandom(1.0)<0.3) currentEffect += 1;
+    if(ofRandom(1.0)<0.15) currentEffect += 2;
+    if(ofRandom(1.0)<0.9) currentEffect += 4;
 }
 
 void higashiView::draw(){
@@ -70,6 +73,7 @@ void higashiView::draw(){
     effector.setUniform1f("volume", myAudio->scaledVol);
     effector.setUniformTexture("result", baseFbo.getTextureReference(), 1);
     effector.setUniform2f("result_resolution", resolution/2.0);
+    effector.setUniform1i("state", currentEffect);
     ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
     effector.end();
     
@@ -78,6 +82,8 @@ void higashiView::draw(){
 array<float, higashiView::historySize> higashiView::temp_history(){
     if(myAudio->hasBeat()){
         history.push_front(1.0);
+        switchEffector();
+        if(ofRandom(1.0) < 0.2) switchShader();
     }else{
         history.push_front(0.9*history.front());
     }
