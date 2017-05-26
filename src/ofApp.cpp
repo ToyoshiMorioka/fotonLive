@@ -8,6 +8,7 @@ void ofApp::setup(){
     akgwView.setup(&audio);
     mrtView.setup(&audio);
     hsgwView.setup(&audio);
+    tokuiView.setup(&audio);
     
 }
 
@@ -39,6 +40,10 @@ void ofApp::draw(){
             break;
         case Developer::Hasegawa:
             temp = hsgwView.drawAndGetFbo();
+            temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            break;
+        case Developer::Tokui:
+            temp = tokuiView.drawAndGetFbo();
             temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         default:
@@ -83,6 +88,13 @@ void ofApp::keyPressed(int key){
 
     }
     
+    //tokui degug---------
+    if(key == 'v'){
+        tokuiView.toggleGui();
+    }
+    if(key == 'c'){
+        tokuiView.changeCameraPosition();
+    }
 }
 
 //--------------------------------------------------------------

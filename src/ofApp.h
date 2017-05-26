@@ -8,6 +8,7 @@
 #include "akagawaView.h"
 #include "murataView.h"
 #include "hasegawaView.h"
+#include "tokuiView.hpp"
 
 class ofApp : public ofBaseApp{    
 public:
@@ -35,13 +36,14 @@ public:
     moriokaView view1;
     murataView mrtView;
     hasegawaView hsgwView;
+    tokuiView tokuiView;
     
     bool showAudioData{false};
     
     // displayed developer info
-    static const int DeveloperNumber = 5;
+    static const int DeveloperNumber = 6;
     enum class Developer: int{
-        Morioka, Akagawa, Higashi, Murata, Hasegawa
+        Morioka, Akagawa, Higashi, Murata, Hasegawa, Tokui
     };
     Developer developer = Developer::Higashi;
 };
