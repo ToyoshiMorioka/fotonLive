@@ -53,6 +53,7 @@ void higashiView::draw(){
         shader2.setUniform1f("iGlobalTime", ofGetElapsedTimef());
         shader2.setUniform2f("iResolution", resolution.x/2, resolution.y/2);
         shader2.setUniform1f("bpm", myAudio->bpm());
+        shader2.setUniform1fv("history", temp.data(), historySize);
         ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
         shader2.end();
     }else{
@@ -81,9 +82,9 @@ void higashiView::draw(){
 
 array<float, higashiView::historySize> higashiView::temp_history(){
     if(myAudio->hasBeat()){
-        history.push_front(1.0);
+        history.push_front(myAudio->scaledVol);
         switchEffector();
-        if(ofRandom(1.0) < 0.2) switchShader();
+        //if(ofRandom(1.0) < 0.2) switchShader();
     }else{
         history.push_front(0.9*history.front());
     }

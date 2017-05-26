@@ -2,6 +2,7 @@
 uniform float iGlobalTime;
 uniform vec2 iResolution;
 uniform float bpm;
+uniform float history[64];
 const float PI = 3.1415926;
 const float P2 = 6.2831852;
 const vec4 albedo = vec4(0.5, 0.0, 0.5, 1.0);
@@ -39,9 +40,9 @@ float beat(float t){
 }
 
 float cubeSize(vec3 p){
-    float discreteDistance = length(floor(p));
-    return 0.3+0.2*sin(discreteDistance-2*iGlobalTime*bpm/60.0);
-    //return 0.4;
+    vec3 target =  vec3(0.0, 0.0, -2.0*iGlobalTime);
+    int i = int(clamp(length(floor(p-target)), 0.0, 64.0));
+    return int(1.0+10.0*history[i]);
 }
 
 vec3 trans(vec3 p){
@@ -60,7 +61,7 @@ float cubeSDF(vec3 p, float s){
 }
 
 float SDF(vec3 p){
-    float dist_cubes = cubeSDF(trans(p), 0.12*beat(iGlobalTime));
+    float dist_cubes = cubeSDF(trans(p), 0.03*cubeSize(p));
     //float dist_bound = cubeSDF(p-vec3(-10.0, -10.0, -10.0), 22.0);
     //dist_bound = unionSDF(dist_bound, cubeSDF(p-vec3(10.0, 10.0, 10.0), 22.0));
     return dist_cubes;

@@ -28,7 +28,8 @@ vec2 decode(float i){
 
 
 vec4 effect_shift(){
-    float shift = 15.0*beat(iGlobalTime, 5.0);
+    // float shift = 15.0*beat(iGlobalTime, 5.0);
+    float shift = 15.0*volume;
     vec4 color;
     vec2 shift_x = mod(upCoord()+vec2(shift,     0)+iResolution, iResolution);
     vec2 shift_y = mod(upCoord()+vec2(-shift,-shift)+iResolution, iResolution);
@@ -68,7 +69,8 @@ bool bitState(int bitPos){
 
 void main()
 {
-    float shift = beat(iGlobalTime/8.0, 6.0);
+    float shift = 2.0*beat(iGlobalTime/8.0, 6.0);
+    // float shift = 15.0*volume;
     gl_FragColor = texture2DRect(result, upCoord());
     if(bitState(1))gl_FragColor = mix(gl_FragColor, effect_glitch(), shift);
     if(bitState(2))gl_FragColor = mix(gl_FragColor, effect_mosaic(), 0.7);
