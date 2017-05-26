@@ -33,7 +33,7 @@ public:
     fotonLiveAudio audio;
     akagawaView akgwView;
     higashiView higashi;
-    moriokaView view1;
+    moriokaView mrokView;
     murataView mrtView;
     hasegawaView hsgwView;
     tokuiView tokuiView;
@@ -45,5 +45,6 @@ public:
     enum class Developer: int{
         Morioka, Akagawa, Higashi, Murata, Hasegawa, Tokui
     };
+    ofFbo memberFbo[DeveloperNumber];
     Developer developer = Developer::Higashi;
 };
