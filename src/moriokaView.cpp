@@ -128,6 +128,7 @@ void moriokaView::rw_particleDraw(){
     if (rw_recentParticleLife <= 0) {
         rw_particleReset();
     }else{
+        
         ofSetColor(255);
         
         for (int i = 0; i < rw_particleNum; i++) {

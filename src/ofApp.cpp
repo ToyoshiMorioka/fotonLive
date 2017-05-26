@@ -10,11 +10,18 @@ void ofApp::setup(){
     hsgwView.setup(&audio);
     tokuiView.setup(&audio);
     
+    timer = ofGetElapsedTimef();
+    
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     ofSetWindowTitle(ofToString(ofGetFrameRate(), 0));
+    
+    if (timer + viewChangeLimitmilliSec < ofGetElapsedTimef()) {
+        developer = static_cast<Developer>((static_cast<int>(developer) + 1) % DeveloperNumber);
+        timer = ofGetElapsedTimef();
+    }
 }
 
 //--------------------------------------------------------------

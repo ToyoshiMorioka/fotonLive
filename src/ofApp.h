@@ -38,6 +38,9 @@ public:
     hasegawaView hsgwView;
     tokuiView tokuiView;
     
+    float viewChangeLimitmilliSec = 30.0;
+    float timer;
+    
     bool showAudioData{false};
     
     // displayed developer info
