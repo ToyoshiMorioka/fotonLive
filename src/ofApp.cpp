@@ -6,6 +6,7 @@ void ofApp::setup(){
     view1.setup(&audio);
     higashi.setup(&audio);
     akgwView.setup(&audio);
+    mrtView.setup(&audio);
     
 }
 
@@ -21,14 +22,18 @@ void ofApp::draw(){
     ofFbo temp, temp2;
     switch(developer){
         case Developer::Morioka:
+            temp = view1.drawAndGetFbo();
             break;
         case Developer::Akagawa:
-            temp = view1.drawAndGetFbo();
             temp2 = akgwView.drawAndGetFbo();
             temp2.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         case Developer::Higashi:
             temp = higashi.drawAndGetFbo();
+            temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            break;
+        case Developer::Murata:
+            temp = mrtView.drawAndGetFbo();
             temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         default:
