@@ -7,6 +7,7 @@ void ofApp::setup(){
     higashi.setup(&audio);
     akgwView.setup(&audio);
     mrtView.setup(&audio);
+    hsgwView.setup(&audio);
     
 }
 
@@ -34,6 +35,10 @@ void ofApp::draw(){
             break;
         case Developer::Murata:
             temp = mrtView.drawAndGetFbo();
+            temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            break;
+        case Developer::Hasegawa:
+            temp = hsgwView.drawAndGetFbo();
             temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         default:
