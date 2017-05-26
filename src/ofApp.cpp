@@ -3,45 +3,60 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     audio.setup();
-    view1.setup(&audio);
+    mrokView.setup(&audio);
     higashi.setup(&audio);
     akgwView.setup(&audio);
     mrtView.setup(&audio);
     hsgwView.setup(&audio);
+    tokuiView.setup(&audio);
+    
+    timer = ofGetElapsedTimef();
     
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     ofSetWindowTitle(ofToString(ofGetFrameRate(), 0));
+    
+    if (timer + viewChangeLimitmilliSec < ofGetElapsedTimef()) {
+        developer = static_cast<Developer>((static_cast<int>(developer) + 1) % DeveloperNumber);
+        timer = ofGetElapsedTimef();
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     
     ofSetColor(255);
-    ofFbo temp, temp2;
+    //ofFbo temp, temp2;
     switch(developer){
         case Developer::Morioka:
-            temp = view1.drawAndGetFbo();
+            memberFbo[0] = mrokView.drawAndGetFbo();
+            memberFbo[0].draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         case Developer::Akagawa:
-            temp2 = akgwView.drawAndGetFbo();
-            temp2.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            memberFbo[1] = akgwView.drawAndGetFbo();
+            memberFbo[1].draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         case Developer::Higashi:
-            temp = higashi.drawAndGetFbo();
-            temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            memberFbo[2] = higashi.drawAndGetFbo();
+            memberFbo[2].draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         case Developer::Murata:
-            temp = mrtView.drawAndGetFbo();
-            temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            memberFbo[3] = mrtView.drawAndGetFbo();
+            memberFbo[3].draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         case Developer::Hasegawa:
-            temp = hsgwView.drawAndGetFbo();
-            temp.draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            memberFbo[4] = hsgwView.drawAndGetFbo();
+            memberFbo[4].draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+            break;
+        case Developer::Tokui:
+            memberFbo[5] = tokuiView.drawAndGetFbo();
+            memberFbo[5].draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
         default:
+            memberFbo[0] = mrokView.drawAndGetFbo();
+            memberFbo[0].draw(0, 0, ofGetWindowWidth(), ofGetWindowHeight());
             break;
     }
     
@@ -83,6 +98,13 @@ void ofApp::keyPressed(int key){
 
     }
     
+    //tokui degug---------
+    if(key == 'v'){
+        tokuiView.toggleGui();
+    }
+    if(key == 'c'){
+        tokuiView.changeCameraPosition();
+    }
 }
 
 //--------------------------------------------------------------

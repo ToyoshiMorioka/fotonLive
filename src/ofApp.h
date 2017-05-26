@@ -8,6 +8,7 @@
 #include "akagawaView.h"
 #include "murataView.h"
 #include "hasegawaView.h"
+#include "tokuiView.hpp"
 
 class ofApp : public ofBaseApp{    
 public:
@@ -32,16 +33,21 @@ public:
     fotonLiveAudio audio;
     akagawaView akgwView;
     higashiView higashi;
-    moriokaView view1;
+    moriokaView mrokView;
     murataView mrtView;
     hasegawaView hsgwView;
+    tokuiView tokuiView;
+    
+    float viewChangeLimitmilliSec = 30.0;
+    float timer;
     
     bool showAudioData{false};
     
     // displayed developer info
-    static const int DeveloperNumber = 5;
+    static const int DeveloperNumber = 6;
     enum class Developer: int{
-        Morioka, Akagawa, Higashi, Murata, Hasegawa
+        Morioka, Akagawa, Higashi, Murata, Hasegawa, Tokui
     };
+    ofFbo memberFbo[DeveloperNumber];
     Developer developer = Developer::Higashi;
 };
