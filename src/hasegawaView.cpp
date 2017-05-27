@@ -352,7 +352,6 @@ void hasegawaView::draw(){
     vector<float> rightInput = myAudio->getRightInput();
     vector<float> spectrum = myAudio->getRawSpectrum();
     vector<float> nSpectrum = myAudio->getNormalSpectrum();
-    input = leftInput[0];
     
     if(hasBeat){
         lastBeatTime = 0;
@@ -407,6 +406,8 @@ void hasegawaView::draw(){
     
     
     if(leftInput.size() != 0){
+        
+        input = leftInput[0];
         
         //ofDrawBitmapString("Estimated BPM: " + ofToString(bpm, 1), 30, 50);
         triggerControll(trigger_int);

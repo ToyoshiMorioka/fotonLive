@@ -38,6 +38,9 @@ public:
     hasegawaView hsgwView;
     tokuiView tokuiView;
     
+    float viewChangeLimitmilliSec = 30.0;
+    float timer;
+    
     bool showAudioData{false};
     
     // displayed developer info
@@ -46,5 +49,5 @@ public:
         Morioka, Akagawa, Higashi, Murata, Hasegawa, Tokui
     };
     ofFbo memberFbo[DeveloperNumber];
-    Developer developer = Developer::Higashi;
+    Developer developer = Developer::Morioka;
 };

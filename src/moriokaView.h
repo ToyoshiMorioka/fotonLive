@@ -10,7 +10,7 @@
 #define moriokaView_h
 
 #include "fotonLiveBase.h"
-
+#import "SphereParticle.hpp"
 
 
 class moriokaView: public fotonLiveBase{
@@ -19,14 +19,19 @@ public:
     ~moriokaView();
     void draw();
     
+    int time = 10;
+    bool viewToggle = true;
+    float viewTimer;
+    
     // random walk particles
     vector<ofVec3f> rw_particles;
     
     // params
+    float rw_rectangleThreshold = 0.1;
     int rw_particleLife = 10;
     int rw_recentParticleLife = 10;
     float rw_drawLineParam = 5.0;
-    const static int rw_particleNum = 100;
+    const static int rw_particleNum = 200;
     
     // method
     void rw_particleSetup();
@@ -63,6 +68,16 @@ public:
     float AngleSpeed = 0.1;
     ofMesh leftMesh;
     ofMesh rightMesh;
+    
+    // sphere
+    vector<SphereParticle> sp_particles;
+    float sp_particleCount;
+    void sp_setup();
+    void sp_draw();
+    float rotateX = 0.0;
+    float rotateY = 0.0;
+    int sp_timer = 0;
+    int sp_timerLimit = 10;
 };
 
 #endif /* moriokaView_h */

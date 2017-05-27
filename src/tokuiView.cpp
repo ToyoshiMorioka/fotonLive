@@ -81,12 +81,13 @@ tokuiView::tokuiView(){
     params.add(u_timestep.set("u_timestep",0.0,0.0,0.01));
     params.add(u_scale.set("u_scale",0.00,0.0,0.001));
     params.add(u_emitterHight.set("u_emitterHight",250,0,500));
-    params.add(u_emitterRadius.set("u_emitterRadius",700,0,5000));
+    params.add(u_emitterRadius.set("u_emitterRadius",2000,0,5000));
     params.add(u_gravity.set("u_gravity",ofVec3f(0,-0.25,0),ofVec3f(-1,-1,-1),ofVec3f(1,1,1)));
     
     gui.setup(params, "tokui_settings.xml");
 //    gui.loadFromFile("tokui_settings.xml");
     showGui = false;
+    kick_counter = 0;
     
     initCameraPositions();
 }
@@ -142,10 +143,15 @@ void tokuiView::draw(){
     ofEnableBlendMode(OF_BLENDMODE_ADD);
     ofEnablePointSprites();
     
-    if(myAudio->hasBeat())
+    if(kick)
     {
-        changeCameraPosition();
+        kick_counter++;
+        if (kick_counter>=4) {
+            kick_counter = 0;
+            changeCameraPosition();
+        }
     }
+//    cout << myAudio->bpm() << endl;
     updateCameraPosition();
     cam.lookAt(currentCameraTarget, currentCameraUp);
     cam.setPosition(currentCameraPosition);
@@ -166,6 +172,7 @@ void tokuiView::draw(){
     ofDisablePointSprites();
     ofPopStyle();
     
+    ofSetColor(255);
     if(showGui) gui.draw();
     
     ofEnableAlphaBlending();
@@ -174,10 +181,10 @@ void tokuiView::draw(){
 
 void tokuiView::changeCameraPosition()
 {
-    index++;
-    if(index >= CAMERA_POSITION_COUNT)
+    id++;
+    if(id >= CAMERA_POSITION_COUNT)
     {
-        index = 0;
+        id = 0;
     }
 //    index = ofRandom(0.99999)*CAMERA_POSITION_COUNT;
 //    cout << index << endl;
@@ -190,9 +197,9 @@ void tokuiView::changeCameraPosition()
 
 void tokuiView::updateCameraPosition()
 {
-    ofVec3f diff_position = cameraPositions[index] - currentCameraPosition;
-    ofVec3f diff_target = cameraTargets[index] - currentCameraTarget;
-    ofVec3f diff_up = cameraUps[index] - currentCameraUp;
+    ofVec3f diff_position = cameraPositions[id] - currentCameraPosition;
+    ofVec3f diff_target = cameraTargets[id] - currentCameraTarget;
+    ofVec3f diff_up = cameraUps[id] - currentCameraUp;
     
     currentCameraPosition += diff_position / 10;
     currentCameraTarget += diff_target / 10;
@@ -247,5 +254,5 @@ void tokuiView::initCameraPositions()
     currentCameraTarget = cameraTargets[0];
     currentCameraUp = cameraUps[0];
 
-    index = 0;
+    id = 0;
 }
