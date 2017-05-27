@@ -63,6 +63,7 @@
 		B59194C82B8D802DA33EC465 /* HsbShiftPass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F8A1741CC4F784D8B130531 /* HsbShiftPass.cpp */; };
 		B951AAE35209993B4E399E77 /* PixelatePass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7462D018F6D6E407E598A021 /* PixelatePass.cpp */; };
 		BD4563BA1ECDD6BB003797F0 /* moriokaView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD4563B81ECDD6BB003797F0 /* moriokaView.cpp */; };
+		BD6F564D1ED8F52600D1ACB9 /* SphereParticle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BD6F564B1ED8F52600D1ACB9 /* SphereParticle.cpp */; };
 		BE5ED1FDB18D5092CF3AACA0 /* PostProcessing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 484F662699DFE8176E1B750F /* PostProcessing.cpp */; };
 		C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BC8881B3C8C0A1C45F042E7A /* OscPrintReceivedElements.cpp */; };
 		CC4101C0E5B5912EE24140E1 /* src_sinc.c in Sources */ = {isa = PBXBuildFile; fileRef = 511E78AF8097CC7AF824127A /* src_sinc.c */; };
@@ -215,6 +216,8 @@
 		BD4563B51ECDD36E003797F0 /* fotonConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fotonConst.h; sourceTree = "<group>"; };
 		BD4563B81ECDD6BB003797F0 /* moriokaView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = moriokaView.cpp; sourceTree = "<group>"; };
 		BD4563B91ECDD6BB003797F0 /* moriokaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = moriokaView.h; sourceTree = "<group>"; };
+		BD6F564B1ED8F52600D1ACB9 /* SphereParticle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereParticle.cpp; sourceTree = "<group>"; };
+		BD6F564C1ED8F52600D1ACB9 /* SphereParticle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SphereParticle.hpp; sourceTree = "<group>"; };
 		C07AAE715D8853EDA76BC909 /* GodRaysPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = GodRaysPass.cpp; path = ../../../addons/ofxPostProcessing/src/GodRaysPass.cpp; sourceTree = SOURCE_ROOT; };
 		C127DCF305861E6D5D6332E6 /* SSAOPass.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = SSAOPass.cpp; path = ../../../addons/ofxPostProcessing/src/SSAOPass.cpp; sourceTree = SOURCE_ROOT; };
 		C2FAC65C491D4231379F3298 /* ofxOscReceiver.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxOscReceiver.cpp; path = ../../../addons/ofxOsc/src/ofxOscReceiver.cpp; sourceTree = SOURCE_ROOT; };
@@ -573,6 +576,8 @@
 				CE23FA311ED54E7F00A466C7 /* higashiView.hpp */,
 				BD4563B81ECDD6BB003797F0 /* moriokaView.cpp */,
 				BD4563B91ECDD6BB003797F0 /* moriokaView.h */,
+				BD6F564B1ED8F52600D1ACB9 /* SphereParticle.cpp */,
+				BD6F564C1ED8F52600D1ACB9 /* SphereParticle.hpp */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -808,6 +813,7 @@
 				F285EB3169F1566CA3D93C20 /* ofxPanel.cpp in Sources */,
 				CE23FA321ED54E7F00A466C7 /* higashiView.cpp in Sources */,
 				837220E80EB56CD44AD27F2A /* ofxSlider.cpp in Sources */,
+				BD6F564D1ED8F52600D1ACB9 /* SphereParticle.cpp in Sources */,
 				B56FE57CC35806596D38118C /* ofxSliderGroup.cpp in Sources */,
 				1CD33E884D9E3358252E82A1 /* ofxToggle.cpp in Sources */,
 				72A929D3561B8232A182ABFC /* ofxOscBundle.cpp in Sources */,
