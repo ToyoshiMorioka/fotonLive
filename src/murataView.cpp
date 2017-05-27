@@ -26,8 +26,11 @@ murataView::murataView(){
     isRandom = false;
     rotateZ = 0;
     
-    colorSet[0] = ofColor(219,127,241);
-    colorSet[1] = ofColor(217,247,150);
+//    colorSet[0] = ofColor(219,127,241);
+//    colorSet[1] = ofColor(217,247,150);
+//    colorSet[1] = ofColor(45,61,150);
+    colorSet[0] = ofColor(45,61,150);
+    colorSet[1] = ofColor(231,14,78);
     colorSet[2] = ofColor(28,21,24);
     colorSet[3] = ofColor(185,254,237);
     colorSet[4] = ofColor(45,61,150);
@@ -139,12 +142,12 @@ void murataView::draw(){
             line.setStrokeColor(colorSet[colorIndex*2+1]);
             line.setFillColor(colorSet[colorIndex*2-1]);
             line.setFilled(enableFill);
-            line.setStrokeWidth(10);
+            line.setStrokeWidth(7);
         }else{
             line.setStrokeColor(colorSet[colorIndex*2+1]);
             line.setFillColor(colorSet[colorIndex*2-1]);
             line.setFilled(enableFill);
-            line.setStrokeWidth(10);
+            line.setStrokeWidth(7);
         }
         
         float tempMax = 0;
@@ -156,13 +159,13 @@ void murataView::draw(){
         for (int j = 0; j < inputHistory[i].size(); j++) {
             int index = (int)inputHistory[i].size() - j - 1;
             float lineX = -1 *((float)j - ( inputHistory[i].size() / 2) )* 10;
-            float lineY = -inputHistory[i][j] * 300;
+            float lineY = -inputHistory[i][j] * 200;
             float lineZ = i*-200+ 500;
             
-            float theta = 2*3.14 / inputHistory[i].size() * j;
+            float theta = 2*3.1415 / (inputHistory[i].size() - 1) * j;
             
-            float circleX = sin(theta) * radius + (inputHistory[i][j]*200) ;
-            float circleY = cos(theta) * radius + (inputHistory[i][j]*200);
+            float circleX = sin(theta) * radius + (inputHistory[i][j]*150) ;
+            float circleY = cos(theta) * radius + (inputHistory[i][j]*150);
             float circleZ = i*-200 + 500 + ((1.0/(float)inputHistory[i].size() * j) * -200);
             
             float posX = lineX * mixHistory[i] + circleX *  (1-mixHistory[i]);
@@ -171,10 +174,6 @@ void murataView::draw(){
             
             line.lineTo( posX,posY,lineZ );
             
-//            if(tempMax < inputHistory[i][j]){
-//                tempMax = height;
-//                tempi = posx;
-//            }
             
         }
 
