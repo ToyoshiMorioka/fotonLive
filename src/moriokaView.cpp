@@ -24,10 +24,10 @@ moriokaView::~moriokaView(){
 }
 
 void moriokaView::draw(){
-    ofBackground(0);
+    
     //ofSetColor(255);
     if (viewTimer + time < ofGetElapsedTimef()) {
-        //viewToggle = !viewToggle;
+        viewToggle = !viewToggle;
         viewTimer = ofGetElapsedTimef();
     }
     
@@ -40,7 +40,7 @@ void moriokaView::draw(){
         rotateX += 0.3;
         rotateY += 1.0;
     }else {
-        
+        ofBackground(0);
         // landscape
         
         // calculate
@@ -260,7 +260,7 @@ void moriokaView::rw_particleDraw(){
                 if (makeRectangle){
                     ofSetColor(255, 255, 255, 255);
                     ofFill();
-                    ofDrawRectangle(rw_particles[i].x, rw_particles[i].y, rw_particles[i].z,  next.x - rw_particles[i].x, next.y - rw_particles[i].y + ofRandom(75));
+                    ofDrawRectangle(rw_particles[i].x, rw_particles[i].y, rw_particles[i].z,  next.x - rw_particles[i].x, next.y - rw_particles[i].y + ofRandom(100) * myAudio->smoothedVol * 3);
                     ofNoFill();
                 }else{
                     ofSetColor(255);
