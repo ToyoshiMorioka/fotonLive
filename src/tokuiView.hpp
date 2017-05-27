@@ -102,7 +102,8 @@ private:
     ofVec3f currentCameraPosition;
     ofVec3f currentCameraTarget;
     ofVec3f currentCameraUp;
-    int index;
+    int id;
+    int kick_counter;
     
     void initCameraPositions();
 };

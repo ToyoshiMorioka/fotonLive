@@ -37,23 +37,39 @@ void main(void){
     float maxAge = velAndMaxAge.w; // 生存期間
 
     age++;
+    // kickの瞬間にたくさん殺す
+    if (u_kick > 0.0) {
+        age += 10;
+    }
     
-    // パーティクルが生存期間を過ぎたら初期化、kickの瞬間に。
+    // パーティクルが生存期間を過ぎたら初期化
     if(age >= maxAge){
         age = 0;
         maxAge = 50.0 + 150.0 * random(pos.xx);
         float theta = 2.0 * PI * random(pos.yy);
         float phi = PI * random(pos.zz);
-        float r = u_emitterRadius * random(pos.xy);
+//        float r = u_emitterRadius * random(pos.xy);
+        float r = (random(pos.xy) * 0.5 + 0.5) *u_emitterRadius;;
         float d = 100 * random(pos.xx);
 //        pos = u_emitterPos + vec3(r * sin(theta) * cos(phi), 0, r * cos(theta) * sin(phi));
-        pos = u_emitterPos + vec3(r * sin(theta), d, r * cos(theta));
-        vel.xyz = vec3(0,0,0);
+        
+        // kickの瞬間は大きく
+        if (u_kick > 0.0) {
+            r = (random(pos.xy) * 0.1 + 1.0) *u_emitterRadius;
+        }
+        
+        if (random(pos.yz) < 0.01) {
+            r = 1.0;
+        }
+        
+//        theta += snoise(vec4(pos.x * u_scale, pos.y * u_scale, pos.z * u_scale, 0.1352 * u_time * u_timestep));
+        pos = u_emitterPos + vec3(r * sin(theta+phi), d, r * cos(theta+phi));
+        vel.xyz = u_gravity * 100; //vec3(0,0,0);
     }
     
     // Curl Noiseで速度を更新
     vel.x += snoise(vec4(pos.x * u_scale, pos.y * u_scale, pos.z * u_scale, 0.1352 * u_time * u_timestep));
-    vel.y += snoise(vec4(pos.x * u_scale, pos.y * u_scale, pos.z * u_scale, 1.2814 * u_time * u_timestep));
+//    vel.y += snoise(vec4(pos.x * u_scale, pos.y * u_scale, pos.z * u_scale, 1.2814 * u_time * u_timestep));
     vel.z += snoise(vec4(pos.x * u_scale, pos.y * u_scale, pos.z * u_scale, 2.5564 * u_time * u_timestep));
     
     // 加速
