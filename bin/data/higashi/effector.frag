@@ -29,7 +29,7 @@ vec2 decode(float i){
 
 vec4 effect_shift(){
     // float shift = 15.0*beat(iGlobalTime, 5.0);
-    float shift = 15.0*volume;
+    float shift = 4.0*volume;
     vec4 color;
     vec2 shift_x = mod(upCoord()+vec2(shift,     0)+iResolution, iResolution);
     vec2 shift_y = mod(upCoord()+vec2(-shift,-shift)+iResolution, iResolution);
