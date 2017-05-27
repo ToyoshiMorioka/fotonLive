@@ -82,6 +82,7 @@ void ofApp::keyPressed(int key){
             break;
         case ' ':
             developer = static_cast<Developer>((static_cast<int>(developer) + 1) % DeveloperNumber);
+            timer = ofGetElapsedTimef();
             break;
         default:
             break;
