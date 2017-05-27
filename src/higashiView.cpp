@@ -41,30 +41,21 @@ void higashiView::switchEffector(){
 void higashiView::draw(){
     auto temp = temp_history();
     baseFbo.begin();
+    ofShader *shader;
     if(current == Fragment::Shader1){
-        shader1.begin();
-        shader1.setUniform1f("iGlobalTime", ofGetElapsedTimef());
-        shader1.setUniform2f("iResolution", resolution.x/2, resolution.y/2);
-        shader1.setUniform1f("bpm", myAudio->bpm());
-        ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
-        shader1.end();
+        shader = &shader1;
     }else if(current == Fragment::Shader2){
-        shader2.begin();
-        shader2.setUniform1f("iGlobalTime", ofGetElapsedTimef());
-        shader2.setUniform2f("iResolution", resolution.x/2, resolution.y/2);
-        shader2.setUniform1f("bpm", myAudio->bpm());
-        shader2.setUniform1fv("history", temp.data(), historySize);
-        ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
-        shader2.end();
+        shader = &shader2;
     }else{
-        shader3.begin();
-        shader3.setUniform1f("iGlobalTime", ofGetElapsedTimef());
-        shader3.setUniform2f("iResolution", resolution.x/2, resolution.y/2);
-        shader3.setUniform1f("bpm", myAudio->bpm());
-        shader3.setUniform1fv("history", temp.data(), historySize);
-        ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
-        shader3.end();
+        shader = &shader3;
     }
+    shader->begin();
+    shader->setUniform1f("iGlobalTime", ofGetElapsedTimef());
+    shader->setUniform2f("iResolution", resolution.x/2, resolution.y/2);
+    shader->setUniform1f("bpm", myAudio->bpm());
+    shader->setUniform1fv("history", temp.data(), historySize);
+    ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
+    shader->end();
     baseFbo.end();
     
     effector.begin();
@@ -82,12 +73,18 @@ void higashiView::draw(){
 
 array<float, higashiView::historySize> higashiView::temp_history(){
     if(myAudio->hasBeat()){
-        history.push_front(myAudio->scaledVol);
+        history.push_front(myAudio->scaledVol*myAudio->scaledVol);
         switchEffector();
         //if(ofRandom(1.0) < 0.2) switchShader();
     }else{
-        history.push_front(0.9*history.front());
+        if(0.55 < myAudio->scaledVol && myAudio->scaledVol < 0.57){
+            history.push_front(myAudio->scaledVol*myAudio->scaledVol);
+        }else{
+            history.push_front(0.85*history.front());
+        }
+        
     }
+    
     if(history.size() > historySize) history.pop_back();
     array<float, higashiView::historySize> temp;
     int i=0;
