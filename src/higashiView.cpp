@@ -76,7 +76,7 @@ array<float, higashiView::historySize> higashiView::temp_history(){
         if(myAudio->scaledVol > 0.2) history.push_front(1.0);
         else history.push_front(myAudio->scaledVol);
         switchEffector();
-        if(ofRandom(1.0) < 0.2 && myAudio->scaledVol > 0.5) switchShader();
+        if(ofRandom(1.0) < 0.2 && myAudio->scaledVol > 0.15) switchShader();
     }else{
         if(0.50 < myAudio->scaledVol && myAudio->scaledVol < 0.55){
             history.push_front(myAudio->scaledVol);
