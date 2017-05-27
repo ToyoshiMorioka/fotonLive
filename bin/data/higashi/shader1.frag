@@ -39,14 +39,16 @@ float beat(float t){
     return exp(-damp*fracture);
 }
 
-// float cubeSize(vec3 p){
-//     float discreteDistance = length(floor(p));
-//     return 0.3+0.2*sin(discreteDistance-2*iGlobalTime*bpm/60.0);
-//     //return 0.4;
-// }
+
 float cubeSize(vec3 p){
     int i = int(4.0*mod(length(floor(p)), 16.0));
     return 0.1+0.9*history[i];
+}
+
+float cubeSize2(vec3 p){
+    float discreteDistance = length(floor(p));
+    return 0.1+0.9*sin(discreteDistance-2*iGlobalTime*bpm/60.0);
+    //return 0.4;
 }
 
 vec3 trans(vec3 p){
@@ -65,7 +67,7 @@ float cubeSDF(vec3 p, float s){
 }
 
 float SDF(vec3 p){
-    float dist_cubes = cubeSDF(trans(p), 0.1+0.4*cubeSize(p));
+    float dist_cubes = cubeSDF(trans(p), 0.1+0.3*cubeSize(p)+0.1*cubeSize2(p));
     float dist_bound = cubeSDF(p-vec3(-10.0, -10.0, -10.0), 22.0);
     dist_bound = unionSDF(dist_bound, cubeSDF(p-vec3(10.0, 10.0, 10.0), 22.0));
     return intersectSDF(dist_bound, dist_cubes);

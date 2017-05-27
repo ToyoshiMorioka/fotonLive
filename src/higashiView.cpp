@@ -73,12 +73,13 @@ void higashiView::draw(){
 
 array<float, higashiView::historySize> higashiView::temp_history(){
     if(myAudio->hasBeat()){
-        history.push_front(myAudio->scaledVol*myAudio->scaledVol);
+        if(myAudio->scaledVol > 0.2) history.push_front(1.0);
+        else history.push_front(myAudio->scaledVol);
         switchEffector();
         if(ofRandom(1.0) < 0.2 && myAudio->scaledVol > 0.5) switchShader();
     }else{
-        if(0.55 < myAudio->scaledVol && myAudio->scaledVol < 0.57){
-            history.push_front(myAudio->scaledVol*myAudio->scaledVol);
+        if(0.50 < myAudio->scaledVol && myAudio->scaledVol < 0.55){
+            history.push_front(myAudio->scaledVol);
         }else{
             history.push_front(0.85*history.front());
         }
